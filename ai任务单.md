@@ -60,7 +60,7 @@ Hello, AI Portfolio!
 Python 环境配置成功！
 ```
 
-GitHub 仓库链接：https://github.com/Tws-Z/ai-portfolio（创建仓库并上传文件后填写）
+GitHub 仓库链接：https://github.com/Tws-Z/ai-portfolio
 
 ## 六、总结与反思
 
