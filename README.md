@@ -70,6 +70,8 @@ python week03_Python/vocab_tool.py
 - `W4_API调用记录.md`：参数体验、费用统计和失败实验记录。
 - `密钥安全自查表.md`：提交前的密钥安全逐项检查。
 - `AI辅助编程实录.md`：已追加 W4 的 AI 初版代码、修改原因和最终差异。
+- `chat_log.txt`：真实 API 问答日志，包含 3 个学科问题、参数实验、多轮追问和 10 次批量调用。
+- `w4_usage.csv`：每次调用的 prompt、completion、total tokens 与估算费用。
 
 运行示例：
 
