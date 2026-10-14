@@ -59,3 +59,22 @@ python week03_Python/vocab_tool.py
 ```
 
 运行后会在仓库根目录生成 `练习.txt`。该文件是自动生成物，已由 `.gitignore` 忽略，不提交到仓库。
+
+## 第 4 周：第一次 API 调用
+
+本仓库增加命令行学科问答机器人，用 API 让程序直接调用大模型回答教学问题。
+
+- `week04_API/week4_api_bot.py`：单次问答、多轮追问、批量调用、token 记录和错误提示。
+- `.env.example`：API 平台和密钥配置模板；真实密钥只写本机 `.env`，不提交。
+- `week04_API/w4_questions.txt`：10 个国际中文教育学科问题，用于费用统计。
+- `W4_API调用记录.md`：参数体验、费用统计和失败实验记录。
+- `密钥安全自查表.md`：提交前的密钥安全逐项检查。
+- `AI辅助编程实录.md`：已追加 W4 的 AI 初版代码、修改原因和最终差异。
+
+运行示例：
+
+```bash
+python week04_API/week4_api_bot.py "把字句的教学难点有哪些"
+python week04_API/week4_api_bot.py --chat
+python week04_API/week4_api_bot.py --batch week04_API/w4_questions.txt
+```
