@@ -80,3 +80,21 @@ python week04_API/week4_api_bot.py "把字句的教学难点有哪些"
 python week04_API/week4_api_bot.py --chat
 python week04_API/week4_api_bot.py --batch week04_API/w4_questions.txt
 ```
+
+## 第 5 周：本地部署入门
+
+本仓库记录了在本机部署 Ollama 并比较本地模型与云端模型的实验。
+
+- `week05_本地部署/ollama_notes.md`：安装步骤、设备与选型、本地 vs 云端 5 问对比、0.5b vs 1.5b 对比、量化/MCP 区分、隐私边界和离线部署复盘。
+- `week05_本地部署/w5_compare_0.5b_vs_cloud.json`：0.5b 与云端同题测试的原始答案和计时。
+- `week05_本地部署/w5_compare_1.5b.json`：1.5b 同题测试的原始答案和计时。
+
+本机使用 Ollama 0.40.8 官方 Windows 便携包，程序和模型均放在 E 盘。主模型为 `qwen2.5:0.5b`，用于质量对比的模型为 `qwen2.5:1.5b`。由于本机只有 8GB 内存且无独立显卡，未尝试 4b/8b 模型。
+
+启动方式：
+
+```powershell
+$env:OLLAMA_MODELS = "E:\Project\Logs2\W3\ollama_models"
+$env:OLLAMA_HOST = "127.0.0.1:11434"
+E:\Project\Logs2\W3\tools\ollama\ollama.exe serve
+```
