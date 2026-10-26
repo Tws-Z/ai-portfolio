@@ -1,0 +1,47 @@
+[
+  {
+    "name": "normal_local",
+    "prefer": "local",
+    "max_tokens": 300,
+    "elapsed_seconds": 5.177,
+    "answer": "好的，以下是 HSK4 阅读理解题的一道题目，题目和四个选项如下：\n\n【题目】\n愚公为了自己的家园，决定移山。他每天在山间挖掘，用石头填平每一寸土地，但最终还是没能成功。愚公的儿子们得知后，决定帮助愚公，让愚公再次成功。儿子们开始挖掘，但他们发现地基太薄，无法支撑起整个山。愚公的儿子们再次挖掘，但地基还是太薄，无法支撑起整个山。愚公的儿子们最终还是没有成功，他们感到非常沮丧和失望。\n\n根据这个故事，选择一个正确的答案。",
+    "stderr_log": "[local] 5.18s | prompt_tokens=54 | completion_tokens=139 | 29.7 tok/s",
+    "error": null
+  },
+  {
+    "name": "local_down_fallback_cloud",
+    "prefer": "local",
+    "max_tokens": 300,
+    "elapsed_seconds": 4.286,
+    "answer": "**题目：**  \n根据《愚公移山》的故事，愚公为什么要移山？\n\nA. 他想把山上的石头卖掉赚钱  \nB. 山挡住了他家的路，出门不方便  \nC. 他想在山上种更多的树  \nD. 他喜欢移山，觉得很有趣  \n\n**答案：B**",
+    "stderr_log": "[本地失败，自动切换云端] ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=11435): Max retries exceeded with url: /api/chat (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=11435): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。\"))\n[api] 2.23s | prompt_tokens=25 | completion_tokens=69 | total_tokens=94 | cost=$0.000045",
+    "error": null
+  },
+  {
+    "name": "normal_api",
+    "prefer": "api",
+    "max_tokens": 300,
+    "elapsed_seconds": 1.681,
+    "answer": "**题目：**  \n根据《愚公移山》的故事，愚公为什么要移山？\n\nA. 他想把山上的石头卖掉赚钱  \nB. 山挡住了他家的路，出门很不方便  \nC. 他想在山里找一条河  \nD. 他喜欢移山，觉得很有意思  \n\n**答案：B**",
+    "stderr_log": "[api] 1.68s | prompt_tokens=25 | completion_tokens=70 | total_tokens=95 | cost=$0.000046",
+    "error": null
+  },
+  {
+    "name": "api_down_fallback_local",
+    "prefer": "api",
+    "max_tokens": 300,
+    "elapsed_seconds": 12.649,
+    "answer": "好的，以下是一道 HSK4 阅读理解题：\n\n题目：\n请在下面的段落中找到并补写出与“愚公移山”中“愚”字意思相近或近似的词组。\n\n《愚公移山》是汉朝文学家贾谊的一篇散文，讲述了中国古代的一位大人物——愚公移山的故事，以及人们通过这个故事所学到的教训。以下是一段文本，用于您进行阅读理解题的练习：\n\n愚公移山\n愚公移山，智叟笑之曰：“汝何知之甚，早为之计将安出？”\n愚公曰：“日月之行，若出其中；星汉灿烂，若出其里。\n常在于险远，而人多知之矣。\n愚公者，汝之所知也。”\n智叟曰：“汝愚如此，何谓之人也？”\n于是，愚公不移其山，而移其室，又移其屋，移其宅，移其宅，移其室，移其山，移其宅，移其室，移其屋，移其宅，移其山，移其宅，移其室，移其屋，移其宅，移其山，移其宅，移其室，移其屋，移其宅，移其山，移其宅，移其室，移其屋，移其宅",
+    "stderr_log": "[云端失败，自动切换本地] APIConnectionError: Connection error.\n[local] 10.28s | prompt_tokens=54 | completion_tokens=300 | 29.6 tok/s",
+    "error": null
+  },
+  {
+    "name": "local_max_tokens_15",
+    "prefer": "local",
+    "max_tokens": 15,
+    "elapsed_seconds": 0.524,
+    "answer": "好的，以下是《愚公移山》的 HSK4",
+    "stderr_log": "[local] 0.52s | prompt_tokens=54 | completion_tokens=15 | 32.7 tok/s",
+    "error": null
+  }
+]

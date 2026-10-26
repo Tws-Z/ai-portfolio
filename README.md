@@ -98,3 +98,14 @@ $env:OLLAMA_MODELS = "E:\Project\Logs2\W3\ollama_models"
 $env:OLLAMA_HOST = "127.0.0.1:11434"
 E:\Project\Logs2\W3\tools\ollama\ollama.exe serve
 ```
+
+## 第 6 周：双引擎封装
+
+本仓库增加了本地 Ollama 与云端 DeepSeek 的统一调用入口。
+
+- `week06_双引擎/llm.py`：`LocalEngine`、`APIEngine` 和 `LLM` 统一入口，支持 `prefer="local"` / `"api"` 双向异常回退。
+- `week06_双引擎/week06_test_log.md`：5 组边界测试、回退日志原文、耗时/质量点评、200 字选型反思和 W7 RAG 预习。
+- `week06_双引擎/w6_test_results.json`：测试脚本保存的原始答案、耗时和日志。
+- `data/等级标准节选.txt`：W7 RAG 预习使用的学科资料。
+
+测试结论：本地 0.5b 可以运行，但专业题质量不足；本地失败会切云端，云端失败会切本地。隐私数据固定走本地，复杂高质量任务使用云端并人工复核。
