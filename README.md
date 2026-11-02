@@ -109,3 +109,15 @@ E:\Project\Logs2\W3\tools\ollama\ollama.exe serve
 - `data/等级标准节选.txt`：W7 RAG 预习使用的学科资料。
 
 测试结论：本地 0.5b 可以运行，但专业题质量不足；本地失败会切云端，云端失败会切本地。隐私数据固定走本地，复杂高质量任务使用云端并人工复核。
+
+## 第 7 周：RAG 入门
+
+本仓库增加了基于本地学科资料的检索增强问答。
+
+- `week07_RAG/rag_qa.py`：加载 → 分块（500 字、重叠 50）→ 本地 `nomic-embed-text` 向量化 → Chroma 检索 → 复用 W6 `LLM.ask()` 生成，并附来源。
+- `week07_RAG/hallucination_log.md`：5 组“裸答本地 / 裸答云端 / RAG”幻觉对照、检索原文、200 字反思和 W8 项目准备。
+- `week07_RAG/w7_hallucination_results.json`：5 组测试的原始答案和耗时。
+- `week07_RAG/w7_local_rag.json`：本地 RAG 对照结果。
+- `data/等级标准节选.txt`：RAG 知识库文本。
+
+`chroma_db/` 是本地生成的向量库，已由 `.gitignore` 排除。运行前需要启动 Ollama，并确保 `nomic-embed-text` 与 `qwen2.5:0.5b` 已安装。
