@@ -121,3 +121,15 @@ E:\Project\Logs2\W3\tools\ollama\ollama.exe serve
 - `data/等级标准节选.txt`：RAG 知识库文本。
 
 `chroma_db/` 是本地生成的向量库，已由 `.gitignore` 排除。运行前需要启动 Ollama，并确保 `nomic-embed-text` 与 `qwen2.5:0.5b` 已安装。
+
+## 第 8 周：阶段项目一
+
+学科智能问答助手 v1.0 把 W6 双引擎和 W7 RAG 组装成统一入口。
+
+- `week08_助手v1.0/assistant_v1.py`：`answer()` 统一问答入口，支持 `use_rag` 和 `prefer`，异常自动兜底。
+- `week08_助手v1.0/README.md`：功能、怎么装、怎么用、已知问题四段式说明。
+- `week08_助手v1.0/answer_log.md`：3 个核心问题及 RAG 开关/本地/云端对比。
+- `week08_助手v1.0/w8_answer_results.json`：原始运行结果。
+- `week08_助手v1.0/oss_rag_mapping.md`：官方 RAG 流水线与本地实现的 5 行映射。
+- `week08_助手v1.0/next_week_tools.md`：W9 工具调用预习。
+- `week08_助手v1.0/release_notes.md`：v1.0 Release 说明。

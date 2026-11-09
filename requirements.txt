@@ -6,6 +6,7 @@ ollama
 python-dotenv        # 让 .env 里的密钥能被 os.getenv 读到（Windows 必需）
 langchain
 langchain-community
+langchain-text-splitters
 langchain-chroma
 langchain-ollama
 chromadb

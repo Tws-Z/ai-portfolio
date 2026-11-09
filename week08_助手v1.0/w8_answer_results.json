@@ -1,0 +1,58 @@
+[
+  {
+    "name": "HSK4累计词汇-RAG-云端",
+    "question": "按照 2021 标准，四级（对应 HSK4）累计需要掌握多少词汇？",
+    "use_rag": true,
+    "prefer": "api",
+    "elapsed_seconds": 4.162,
+    "answer": "简洁答案：按照资料 2，四级累计需要掌握词汇 3245 个。\n\n使用资料编号：资料 2。"
+  },
+  {
+    "name": "HSK4累计词汇-纯对话-本地",
+    "question": "按照 2021 标准，四级（对应 HSK4）累计需要掌握多少词汇？",
+    "use_rag": false,
+    "prefer": "local",
+    "elapsed_seconds": 4.948,
+    "answer": "按照 2021 标准，四级（对应 HSK4）累计需要掌握的词汇量为 10000 词。"
+  },
+  {
+    "name": "HSK4累计汉字-RAG-云端",
+    "question": "按照 2021 标准，HSK4（四级）累计需要掌握多少汉字？",
+    "use_rag": true,
+    "prefer": "api",
+    "elapsed_seconds": 3.406,
+    "answer": "简洁答案：按照资料 2 的表格，HSK 四级“汉字”列显示为“300/1200”，其中斜杠后的 1200 为累计数量，因此累计需要掌握 1200 个汉字。\n\n使用资料：资料 2。"
+  },
+  {
+    "name": "HSK4累计汉字-纯对话-云端",
+    "question": "按照 2021 标准，HSK4（四级）累计需要掌握多少汉字？",
+    "use_rag": false,
+    "prefer": "api",
+    "elapsed_seconds": 5.372,
+    "answer": "按照 2021 年发布的《国际中文教育中文水平等级标准》，HSK 四级累计需要掌握 **1,200 个汉字**。\n\n可核验说明：该标准将汉字量按等级累计列出，四级（中等水平第二级）对应累计汉字量为 1,200 个。若你需要，我可以进一步列出各级累计汉字量对照。"
+  },
+  {
+    "name": "HSK6累计语法-RAG-云端",
+    "question": "按照 2021 标准，HSK6（六级）累计需要掌握多少语法点？",
+    "use_rag": true,
+    "prefer": "api",
+    "elapsed_seconds": 11.976,
+    "answer": "简洁答案：按照 2021 标准，HSK 六级累计需要掌握语法点 424 个。\n\n使用资料：资料 1（HSK 等级语言量化指标总表，六级“语法点”列累计数为 424）。"
+  },
+  {
+    "name": "HSK6累计语法-纯对话-本地",
+    "question": "按照 2021 标准，HSK6（六级）累计需要掌握多少语法点？",
+    "use_rag": false,
+    "prefer": "local",
+    "elapsed_seconds": 1.516,
+    "answer": "按照 2021 标准，HSK6（六级）累计需要掌握的语法点为 1100 个。"
+  },
+  {
+    "name": "HSK6累计语法-RAG-本地",
+    "question": "按照 2021 标准，HSK6（六级）累计需要掌握多少语法点？",
+    "use_rag": true,
+    "prefer": "local",
+    "elapsed_seconds": 14.497,
+    "answer": "简洁答案：HSK6（六级）累计需要掌握148个语法点。\n\n资料编号：资料 2"
+  }
+]
