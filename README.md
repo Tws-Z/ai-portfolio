@@ -133,3 +133,4 @@ E:\Project\Logs2\W3\tools\ollama\ollama.exe serve
 - `week08_助手v1.0/oss_rag_mapping.md`：官方 RAG 流水线与本地实现的 5 行映射。
 - `week08_助手v1.0/next_week_tools.md`：W9 工具调用预习。
 - `week08_助手v1.0/release_notes.md`：v1.0 Release 说明。
+- `week08/peer_review.md`：对指定对象陈龙SERNLONG的 W8 四维度互评记录（只描述现象，不打分）。
