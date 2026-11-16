@@ -25,14 +25,16 @@ SYSTEM_HINT = (
 llm = LLM()
 
 
-def answer(question, use_rag=True, prefer="local", k=3):
-    """统一问答入口：use_rag 控制是否检索资料，prefer 控制引擎偏好。"""
+def answer(question, use_rag=True, prefer="local", k=3, with_sources=True):
+    """统一问答入口：use_rag 控制检索，prefer 控制引擎，with_sources 控制出处。"""
     if prefer not in ("local", "api"):
         raise ValueError("prefer 只能是 'local' 或 'api'")
     try:
         if use_rag:
-            context = retrieve(question, k=k)
-            prompt = SYSTEM_HINT + "\n" + build_prompt(question, context)
+            context = retrieve(question, k=k, include_sources=with_sources)
+            prompt = SYSTEM_HINT + "\n" + build_prompt(
+                question, context, require_sources=with_sources
+            )
         else:
             # 纯对话模式：只给系统人设，不附加知识库资料。
             prompt = SYSTEM_HINT + "\n问题：" + question
@@ -49,6 +51,7 @@ def build_parser():
     parser.add_argument("--prefer", choices=("local", "api"), default="local",
                         help="首选引擎：local 本地，api 云端")
     parser.add_argument("--k", type=int, default=3, help="RAG 检索片段数")
+    parser.add_argument("--no-sources", action="store_true", help="RAG 回答不显示资料来源")
     return parser
 
 
@@ -57,7 +60,7 @@ def main():
     question = " ".join(args.question).strip()
     if not question:
         question = "HSK4（四级）累计需要掌握多少词汇？"
-    print(answer(question, use_rag=not args.no_rag, prefer=args.prefer, k=args.k))
+    print(answer(question, use_rag=not args.no_rag, prefer=args.prefer, k=args.k, with_sources=not args.no_sources))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,16 @@
+[
+  {
+    "label": "with_sources=True",
+    "question": "按照 2021 标准，四级（对应 HSK4）累计需要掌握多少词汇？",
+    "with_sources": true,
+    "elapsed_seconds": 6.523,
+    "answer": "简洁答案：按照资料中的等级标准总表，四级累计需要掌握词汇 3245 个。\n\n使用的资料编号：资料 2。"
+  },
+  {
+    "label": "with_sources=False",
+    "question": "按照 2021 标准，四级（对应 HSK4）累计需要掌握多少词汇？",
+    "with_sources": false,
+    "elapsed_seconds": 3.389,
+    "answer": "按照资料中的表格，四级“词汇”列为 1000/3245，其中 a/b 表示 a 为本级新增、b 为累计数量。因此四级累计需要掌握词汇 **3245 个**。"
+  }
+]

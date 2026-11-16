@@ -101,3 +101,6 @@ print(answer(
 3. `chroma_db/` 是本地生成物，不提交；修改 `data/等级标准节选.txt` 后必须使用 `rebuild=True` 重建，否则检索还是旧资料。
 4. Ollama 未启动、`nomic-embed-text` 未拉取或系统代理拦截 localhost 时，RAG 会失败；本程序会显示失败原因，不会静默返回空字符串。
 5. 云端密钥缺失或余额不足时，云端调用可能失败；程序会尝试切换到本地引擎，但本地答案仍需人工复核。
+## 出处开关（B 路径改造）
+
+默认 `with_sources=True`，RAG 回答会显示资料编号。使用 Python 调用时可以设置 `answer(..., with_sources=False)`；命令行可以加 `--no-sources`。关闭出处不会关闭检索，模型仍然基于检索片段回答。

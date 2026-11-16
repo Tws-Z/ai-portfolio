@@ -95,33 +95,41 @@ def retrieve_documents(question, k=3, rebuild=False):
     return retriever.invoke(question)
 
 
-def format_context(documents):
-    """把检索片段拼成带来源编号的上下文。"""
+def format_context(documents, include_sources=True):
+    """把检索片段拼成上下文；include_sources=False 时只保留正文。"""
     blocks = []
     for index, doc in enumerate(documents, 1):
-        source = doc.metadata.get("source_name", "未知资料")
-        chunk_id = doc.metadata.get("chunk_id", "?")
-        blocks.append(
-            "【资料 %d｜来源：%s｜片段 %s】\n%s"
-            % (index, source, chunk_id, doc.page_content.strip())
-        )
+        if include_sources:
+            source = doc.metadata.get("source_name", "未知资料")
+            chunk_id = doc.metadata.get("chunk_id", "?")
+            blocks.append(
+                "【资料 %d｜来源：%s｜片段 %s】\n%s"
+                % (index, source, chunk_id, doc.page_content.strip())
+            )
+        else:
+            blocks.append(doc.page_content.strip())
     return "\n\n".join(blocks)
 
 
-def retrieve(question, k=3, rebuild=False):
-    """兼容课程接口：返回拼接后的检索文本。"""
-    return format_context(retrieve_documents(question, k=k, rebuild=rebuild))
-
-
-def build_prompt(question, context):
-    """把检索结果放进强约束提示词，要求模型只依据资料回答。"""
-    return (
-        "你是国际中文教育学科助手。请严格根据下面的资料回答问题。\n"
-        "资料中没有的内容必须如实回答「资料中未提及」，不得凭记忆补充数字或规则。\n如果资料包含表格，请严格按表头逐列对应，注意区分音节、汉字、词汇和语法点，不要混用相邻列。\n\n"
-        "资料：\n%s\n\n问题：%s\n\n"
-        "请先给出简洁答案，再列出你使用的资料编号。"
-        % (context, question)
+def retrieve(question, k=3, rebuild=False, include_sources=True):
+    """兼容课程接口：返回拼接后的检索文本，可选是否带来源标签。"""
+    return format_context(
+        retrieve_documents(question, k=k, rebuild=rebuild),
+        include_sources=include_sources,
     )
+
+
+def build_prompt(question, context, require_sources=True):
+    """把检索结果放进强约束提示词；可选是否要求模型列出来源。"""
+    base = (
+        "你是国际中文教育学科助手。请严格根据下面的资料回答问题。\n"
+        "资料中没有的内容必须如实回答「资料中未提及」，不得凭记忆补充数字或规则。\n"
+        "如果资料包含表格，请严格按表头逐列对应，注意区分音节、汉字、词汇和语法点，不要混用相邻列。\n\n"
+        "资料：\n%s\n\n问题：%s\n\n"
+    ) % (context, question)
+    if require_sources:
+        return base + "请先给出简洁答案，再列出你使用的资料编号。"
+    return base + "请给出简洁答案。"
 
 
 def rag_qa(question, prefer="local", k=3, rebuild=False, with_sources=True):
@@ -129,8 +137,8 @@ def rag_qa(question, prefer="local", k=3, rebuild=False, with_sources=True):
     documents = retrieve_documents(question, k=k, rebuild=rebuild)
     if not documents:
         return "资料中未提及。"
-    context = format_context(documents)
-    answer = LLM().ask(build_prompt(question, context), prefer=prefer)
+    context = format_context(documents, include_sources=with_sources)
+    answer = LLM().ask(build_prompt(question, context, require_sources=with_sources), prefer=prefer)
 
     if with_sources:
         source_lines = []
