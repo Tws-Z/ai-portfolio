@@ -49,3 +49,6 @@ python week09_工具调用/tool_agent.py "请评估这段课文相对 HSK4 的�
 - `lesson_difficulty` 使用 `data/生词表.csv` 的样例词典，覆盖率只能作为演示，不能直接作为正式教材难度结论。
 - 模型可能输出代码围栏或前后说明；`parse_calls` 会尽量提取 JSON，无法解析时按普通回答处理。
 - 工具执行异常会回喂给模型；达到最大轮数仍无自然语言答案时，需要人工重试并查看 `tool_trace_log.md` 中的原始输出。
+
+- w10_preview.md：W10 的 Function Calling、MCP、普通 API 三句辨析和两个外部工具。
+- smolagents_mapping.md：手写 tool_agent.py 与 smolagents ToolCallingAgent 的 5 行映射。
