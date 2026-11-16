@@ -1,0 +1,130 @@
+[
+  {
+    "name": "复合工具调用",
+    "question": "请依次查询两件事：1. '把'字的 HSK 等级是多少？2. 现在的时间是多少？",
+    "elapsed_seconds": 5.313,
+    "trace": [
+      {
+        "round": 1,
+        "model_output": "{\"tool\": \"hsk_level\", \"args\": [\"把\"]}",
+        "calls": [
+          {
+            "tool": "hsk_level",
+            "args": [
+              "把"
+            ]
+          }
+        ],
+        "tool_results": [
+          "hsk_level['把'] → 把 是 3 级"
+        ]
+      },
+      {
+        "round": 2,
+        "model_output": "“把”字的 HSK 等级是 3 级。\n\n接下来查询当前时间。\n{\"tool\": \"get_time\", \"args\": []}",
+        "calls": [
+          {
+            "tool": "get_time",
+            "args": []
+          }
+        ],
+        "tool_results": [
+          "get_time[] → 2026-11-16 13:17:09.206284"
+        ]
+      }
+    ],
+    "final_answer": "两件事的结果如下：\n\n1. “把”字的 HSK 等级是 **3 级**。\n2. 当前时间是 **2026-11-16 13:17:09**。",
+    "error": null
+  },
+  {
+    "name": "安全计算",
+    "question": "请用计算器计算 35*24 等于多少。",
+    "elapsed_seconds": 2.034,
+    "trace": [
+      {
+        "round": 1,
+        "model_output": "{\"tool\": \"calc\", \"args\": [\"35*24\"]}",
+        "calls": [
+          {
+            "tool": "calc",
+            "args": [
+              "35*24"
+            ]
+          }
+        ],
+        "tool_results": [
+          "calc['35*24'] → 840"
+        ]
+      },
+      {
+        "round": 2,
+        "model_output": "35*24 等于 840。",
+        "calls": [],
+        "tool_results": []
+      }
+    ],
+    "final_answer": "35*24 等于 840。",
+    "error": null
+  },
+  {
+    "name": "课文难度评估",
+    "question": "请用课文难度工具评估这段课文相对 HSK4 的难度：愚公移山讲述了愚公带领子孙挖山的故事。",
+    "elapsed_seconds": 5.721,
+    "trace": [
+      {
+        "round": 1,
+        "model_output": "{\"tool\": \"lesson_difficulty\", \"args\": [\"愚公移山讲述了愚公带领子孙挖山的故事。\", \"4\"]}",
+        "calls": [
+          {
+            "tool": "lesson_difficulty",
+            "args": [
+              "愚公移山讲述了愚公带领子孙挖山的故事。",
+              "4"
+            ]
+          }
+        ],
+        "tool_results": [
+          "lesson_difficulty['愚公移山讲述了愚公带领子孙挖山的故事。', '4'] → {\"target_level\": 4, \"total_units\": 14, \"in_level_count\": 0, \"out_of_level_count\": 2, \"unknown_char_count\": 12, \"coverage_rate\": 0.0, \"out_of_level_words\": [\"愚公\", \"愚公移山\"], \"unlisted_segments\": [\"讲述了\", \"带领子孙挖山的故事\"], \"note\": \"基于 data/生词表.csv 的样例词典，结果需人工复核\"}"
+        ]
+      },
+      {
+        "round": 2,
+        "model_output": "根据工具评估结果，这段课文相对 HSK4 的难度偏高，具体如下：\n\n- **目标等级**：HSK4\n- **总单位数**：14\n- **等级内词数**：0\n- **超纲词数**：2（“愚公”“愚公移山”）\n- **未收录字词数**：12\n- **覆盖率**：0.0%\n- **未收录片段**：“讲述了”“带领子孙挖山的故事”\n- **备注**：结果基于样例词典，需人工复核\n\n**简析**：这段课文对 HSK4 学习者来说难度偏大。一是专有名词“愚公”“愚公移山”属于文化典故类词汇，不在 HSK4 词表内；二是“讲述了”“带领子孙挖山的故事”等片段未被词典收录，覆盖率显示为 0.0%。不过该结果基于样例词典，覆盖率 0.0% 可能因词典规模有限而偏严，建议人工复核后再作定级判断。\n\n若用于 HSK4 教学，可考虑为“愚公移山”添加注释或背景说明，并简化“讲述了……的故事”这类表达。",
+        "calls": [],
+        "tool_results": []
+      }
+    ],
+    "final_answer": "根据工具评估结果，这段课文相对 HSK4 的难度偏高，具体如下：\n\n- **目标等级**：HSK4\n- **总单位数**：14\n- **等级内词数**：0\n- **超纲词数**：2（“愚公”“愚公移山”）\n- **未收录字词数**：12\n- **覆盖率**：0.0%\n- **未收录片段**：“讲述了”“带领子孙挖山的故事”\n- **备注**：结果基于样例词典，需人工复核\n\n**简析**：这段课文对 HSK4 学习者来说难度偏大。一是专有名词“愚公”“愚公移山”属于文化典故类词汇，不在 HSK4 词表内；二是“讲述了”“带领子孙挖山的故事”等片段未被词典收录，覆盖率显示为 0.0%。不过该结果基于样例词典，覆盖率 0.0% 可能因词典规模有限而偏严，建议人工复核后再作定级判断。\n\n若用于 HSK4 教学，可考虑为“愚公移山”添加注释或背景说明，并简化“讲述了……的故事”这类表达。",
+    "error": null
+  },
+  {
+    "name": "失败案例尝试",
+    "question": "请用 math 工具计算 1+1。",
+    "elapsed_seconds": 4.337,
+    "trace": [
+      {
+        "round": 1,
+        "model_output": "{\"tool\": \"calc\", \"args\": [\"1+1\"]}",
+        "calls": [
+          {
+            "tool": "calc",
+            "args": [
+              "1+1"
+            ]
+          }
+        ],
+        "tool_results": [
+          "calc['1+1'] → 2"
+        ]
+      },
+      {
+        "round": 2,
+        "model_output": "1+1 的结果是 2。",
+        "calls": [],
+        "tool_results": []
+      }
+    ],
+    "final_answer": "1+1 的结果是 2。",
+    "error": null
+  }
+]

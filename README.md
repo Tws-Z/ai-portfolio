@@ -134,3 +134,15 @@ E:\Project\Logs2\W3\tools\ollama\ollama.exe serve
 - `week08_助手v1.0/next_week_tools.md`：W9 工具调用预习。
 - `week08_助手v1.0/release_notes.md`：v1.0 Release 说明。
 - `week08/peer_review.md`：对指定对象陈龙SERNLONG的 W8 四维度互评记录（只描述现象，不打分）。
+
+## 第 9 周：工具调用
+
+本仓库增加了手写工具调用循环和 4 个安全工具。
+
+- `week09_工具调用/tool_agent.py`：`get_time`、`calc`、`hsk_level`、`lesson_difficulty`，支持 JSON 容错解析和多轮回喂。
+- `week09_工具调用/tool_trace_log.md`：3 条成功调用轨迹和 1 条本地 0.5b 失败案例会诊。
+- `week09_工具调用/w9_trace_results.json`：成功轨迹原始数据。
+- `week09_工具调用/w9_failure_results.json`：失败案例原始数据。
+- `week09_工具调用/README.md`：安装、运行方式与已知限制。
+
+`calc` 使用白名单 AST，不使用裸 `eval`；`.env` 和密钥不进入仓库。

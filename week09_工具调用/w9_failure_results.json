@@ -1,0 +1,109 @@
+[
+  {
+    "name": "本地非JSON尝试",
+    "question": "把字是几级？现在几点了？",
+    "elapsed_seconds": 4.758,
+    "trace": [
+      {
+        "round": 1,
+        "model_output": "{\"tool\": \"get_time\", \"args\": []}",
+        "calls": [
+          {
+            "tool": "get_time",
+            "args": []
+          }
+        ],
+        "tool_results": [
+          "get_time[] → 2026-11-16 13:09:17.726457"
+        ]
+      },
+      {
+        "round": 2,
+        "model_output": "{\"tool\": \"get_time\", \"args\": [\"\"]}",
+        "calls": [
+          {
+            "tool": "get_time",
+            "args": [
+              ""
+            ]
+          }
+        ],
+        "tool_results": [
+          "工具参数数量错误：get_time 需要 0 个参数，实际收到 1 个"
+        ]
+      },
+      {
+        "round": 3,
+        "model_output": "{\"tool\": \"get_time\", \"args\": []}",
+        "calls": [
+          {
+            "tool": "get_time",
+            "args": []
+          }
+        ],
+        "tool_results": [
+          "达到最大工具调用轮数"
+        ]
+      }
+    ],
+    "final_answer": "工具调用未完成：模型在达到调用上限后仍在请求工具。请重试或改用云端模型。",
+    "error": null
+  },
+  {
+    "name": "本地参数/工具选择尝试",
+    "question": "请用 math 工具算 2+2。",
+    "elapsed_seconds": 4.681,
+    "trace": [
+      {
+        "round": 1,
+        "model_output": "{\"tool\": \"calc\", \"args\": [2, 2]}",
+        "calls": [
+          {
+            "tool": "calc",
+            "args": [
+              2,
+              2
+            ]
+          }
+        ],
+        "tool_results": [
+          "工具参数数量错误：calc 需要 1 个参数，实际收到 2 个"
+        ]
+      },
+      {
+        "round": 2,
+        "model_output": "{\"tool\": \"calc\", \"args\": [0, 2]}",
+        "calls": [
+          {
+            "tool": "calc",
+            "args": [
+              0,
+              2
+            ]
+          }
+        ],
+        "tool_results": [
+          "工具参数数量错误：calc 需要 1 个参数，实际收到 2 个"
+        ]
+      },
+      {
+        "round": 3,
+        "model_output": "{\"tool\": \"calc\", \"args\": [0, 2]}",
+        "calls": [
+          {
+            "tool": "calc",
+            "args": [
+              0,
+              2
+            ]
+          }
+        ],
+        "tool_results": [
+          "达到最大工具调用轮数"
+        ]
+      }
+    ],
+    "final_answer": "工具调用未完成：模型在达到调用上限后仍在请求工具。请重试或改用云端模型。",
+    "error": null
+  }
+]
