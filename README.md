@@ -146,3 +146,14 @@ E:\Project\Logs2\W3\tools\ollama\ollama.exe serve
 - `week09_工具调用/README.md`：安装、运行方式与已知限制。
 
 `calc` 使用白名单 AST，不使用裸 `eval`；`.env` 和密钥不进入仓库。
+
+## 第 10 周：MCP 与工具生态预习
+
+- `week10_MCP/hsk_mcp_server.py`：兼容 mcp 1.x/2.x 的 stdio MCP 服务端，提供 `hsk_level` 和 `list_by_level`。
+- `week10_MCP/env_check.py`：检查 Python、mcp 导入、W9 工具和课程数据。
+- `week10_MCP/preview_notes.md`：环境、服务端、三者辨析和预习记录。
+- `week10_MCP/env_check_output.png`：环境检查运行截图。
+- `week10_MCP/mcp_import_output.png`：mcp 导入验证截图。
+- `week10_MCP/mcp_server_start.png`：MCP 服务端启动状态截图。
+
+本机实际使用 mcp 2.3.0，`from mcp.server import MCPServer` 路径验证通过。
