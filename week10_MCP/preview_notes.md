@@ -42,7 +42,7 @@ python hsk_mcp_server.py
 
 ## 4. W11 多步规划预习
 
-本次预习的必做项已经完成。W11 的 planner 预览属于选做：本机为 8GB 内存且无独立显卡，文档建议低配机使用云端模式；下周上课前可再运行并补截图。
+本次必做项已经完成。W11 planner 预览已使用云端模式跑通：`python week11_智能体/planner_agent.py 愚公移山 --cloud` 输出四个步骤标题，截图在 `week11_智能体/planner_preview.png`，原始输出在 `week11_智能体/planner_preview_output.txt`。
 
 ## 5. 截图清单
 

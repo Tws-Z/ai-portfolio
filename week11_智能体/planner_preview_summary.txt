@@ -1,0 +1,9 @@
+PS E:\Project\Logs2\W3\ai-portfolio-repo> python week11_智能体/planner_agent.py 愚公移山 --cloud
+cloud mode enabled: --cloud
+
+【定教学要点：梳理《愚公移山》的文言字词、人物形象、寓意与对比/衬托手法，明确教学重点与难点。】
+【写教学目标：按知识与能力、过程与方法、情感态度与价值观三个维度，写出可检测的具体教学目标。】
+【出教案框架：按导入—初读疏通—精读分析—主旨探究—拓展延伸—小结作业列出教案主体框架。】
+【配 3 道练习：围绕字词理解、人物与写法分析、寓意与现实启示各设计 1 道练习。】
+
+4-step lesson plan completed (cloud model).

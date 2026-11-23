@@ -147,16 +147,17 @@ E:\Project\Logs2\W3\tools\ollama\ollama.exe serve
 
 `calc` 使用白名单 AST，不使用裸 `eval`；`.env` 和密钥不进入仓库。
 
-## 第 10 周：MCP 与工具生态预习
+## 第 10 周：MCP 与工具生态
 
-- `week10_MCP/hsk_mcp_server.py`：兼容 mcp 1.x/2.x 的 stdio MCP 服务端，提供 `hsk_level` 和 `list_by_level`。
-- `week10_MCP/env_check.py`：检查 Python、mcp 导入、W9 工具和课程数据。
-- `week10_MCP/preview_notes.md`：环境、服务端、三者辨析和预习记录。
-- `week10_MCP/env_check_output.png`：环境检查运行截图。
-- `week10_MCP/mcp_import_output.png`：mcp 导入验证截图。
-- `week10_MCP/mcp_server_start.png`：MCP 服务端启动状态截图。
-- `week10_MCP/mcp_client_demo.py`：MCP 客户端，发现并调用三个工具。
-- `week10_MCP/mcp_client_output.png`：客户端工具列表和调用返回截图。
+- `week10_MCP/hsk_mcp_server.py`：兼容 mcp 1.x/2.x 的 stdio MCP 服务端，提供 `hsk_level`、`list_by_level`、`count_by_level` 三个工具。
+- `week10_MCP/mcp_client_demo.py`：MCP 客户端，发现工具并调用 `hsk_level`、`count_by_level`、`list_by_level`。
 - `week10_MCP/mcp_practice.md`：配置记录、调用证据、三者辨析和第 3 个工具说明。
+- `week10_MCP/M1_protocol_draft.md`：M1 会话协议草案（事件字段、状态机、权威/幂等、断线语义）。
+- `week10_MCP/env_check.py`：检查 Python、mcp 导入、W9 工具和课程数据。
+- `week10_MCP/preview_notes.md`：环境、服务端、调用与预习记录。
+- `week10_MCP/mcp_client_output.png`：客户端工具列表和调用返回截图。
+- `week10_MCP/env_check_output.png`、`mcp_import_output.png`、`mcp_server_start.png`：环境检查、导入验证和服务端启动截图。
+- `week11_智能体/planner_agent.py`：W11 多步规划预习，支持 `--cloud`。
+- `week11_智能体/planner_preview.png`：四步备课预览截图。
 
 本机实际使用 mcp 2.3.0，`from mcp.server import MCPServer` 路径验证通过。
