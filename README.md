@@ -155,5 +155,8 @@ E:\Project\Logs2\W3\tools\ollama\ollama.exe serve
 - `week10_MCP/env_check_output.png`：环境检查运行截图。
 - `week10_MCP/mcp_import_output.png`：mcp 导入验证截图。
 - `week10_MCP/mcp_server_start.png`：MCP 服务端启动状态截图。
+- `week10_MCP/mcp_client_demo.py`：MCP 客户端，发现并调用三个工具。
+- `week10_MCP/mcp_client_output.png`：客户端工具列表和调用返回截图。
+- `week10_MCP/mcp_practice.md`：配置记录、调用证据、三者辨析和第 3 个工具说明。
 
 本机实际使用 mcp 2.3.0，`from mcp.server import MCPServer` 路径验证通过。

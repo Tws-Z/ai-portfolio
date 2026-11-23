@@ -48,6 +48,12 @@ def list_by_level(level: str) -> str:
     return "、".join(out) if out else "该等级暂无词汇"
 
 
+@mcp.tool()
+def count_by_level(level: str) -> str:
+    """统计某个 HSK 等级收录的词汇数量。"""
+    words = [row["词汇"] for row in _rows() if row["HSK等级"] == str(level).strip()]
+    return "HSK%s 共有 %d 个词汇" % (level, len(words))
+
 if __name__ == "__main__":
     mcp.run()
 

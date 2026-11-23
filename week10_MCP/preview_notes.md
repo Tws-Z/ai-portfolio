@@ -30,6 +30,7 @@ python hsk_mcp_server.py
 
 - `hsk_level(word: str) -> str`：查询一个词的 HSK 等级。
 - `list_by_level(level: str) -> str`：列出某个 HSK 等级的全部词汇。
+- count_by_level(level: str) -> str：统计某个 HSK 等级收录的词汇数量。
 
 类型注解就是客户端发现参数结构的依据：客户端从 `word: str` 知道 `hsk_level` 需要一个字符串参数。
 
